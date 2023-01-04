@@ -1,0 +1,22 @@
+@mixin text($font-size, $font-weight, $color, $line-height:initial) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+    line-height: $line-height;
+}
+
+@mixin flex($jc: flex-start, $ai: stretch, $direction: row, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-wrap: $wrap;
+}
+
+@mixin flex-col($jc, $ai, $direction, $wrap) {
+    @include flex($jc, $ai, $column, $wrap)
+}
+
+@mixin flex-center($direction:row) {
+    @include flex(center, center, $direction)
+}

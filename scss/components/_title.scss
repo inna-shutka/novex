@@ -1,0 +1,6 @@
+.title {
+    @include text(4rem, 600, $color-gray-4, 120%);
+    @include media('tablet') {
+        
+    }
+}
