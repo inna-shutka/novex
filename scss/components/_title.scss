@@ -1,6 +1,22 @@
 .title {
-    @include text(4rem, 600, $color-gray-4, 120%);
-    @include media('tablet') {
-        
+    @include text(rem(40px), 600, $color-gray-4, 120%, 'Saira');
+    @include media("tablet") {
+        font-size: rem(50px);
+    }
+    &--investors {
+        @include text(rem(38px), 600, $color-gray-4, 120%, 'Saira');
+    }
+    &--feedback {
+        text-decoration: underline 1px solid $color-gray-2;
+        text-underline-offset: 4px;
+        @include text(rem(16px), 500, $color-gray-2, 17px, 'Rubik');
+        @include media("tablet") {
+        font-size: rem(14px);
+    }
+    }
+    &--hiring {
+        @include media("tablet") {
+        font-size: rem(56px);
+    }
     }
 }

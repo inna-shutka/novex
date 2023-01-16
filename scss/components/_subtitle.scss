@@ -1,0 +1,21 @@
+.subtitle {
+    @include text(rem(16px), 400, $color-gray-5, 160%, 'Inter');
+    @include media("tablet") {
+        font-family: 'Arimo';
+    }
+    &--form {
+        color: $color-gray-1;
+    }
+    &--feedback {
+        @include text(rem(18px), 400, $color-gray-2, 160%, 'Inter');
+    }
+    &--hiring {
+        @include text(rem(16px), 400, $color-gray-1, 160%, 'Inter');
+        @include media("tablet") {
+            font-size: rem(18px);
+    }
+    }
+    &--footer {
+        @include text(rem(16px), 400, $color-gray-1, 160%, 'Inter');
+    }
+}

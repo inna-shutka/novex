@@ -1,0 +1,16 @@
+.arrow-button {
+    visibility: hidden;
+    @include size(48px, true);
+    background-color: $color-gray-3;
+    @include transition(background-color);
+    @include flex(center, center, row, nowrap);
+    @include media('tablet') {
+        visibility: visible;
+    }
+    &:hover {
+        background-color: $color-primary;
+    }
+    &__icon {
+        @include svg(24px, $color-white);
+    }
+}

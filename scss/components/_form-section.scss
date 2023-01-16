@@ -1,0 +1,44 @@
+.form-section {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    @include flex(center, center, column);
+    @include media('tablet') {
+        padding-top: 64px;
+        padding-bottom: 63px;
+        @include flex(space-between, center, row);
+    }
+    &__img {
+        width: 264px;
+        height: 305px;
+        width: 100%;
+        margin-bottom: 30px;
+        @include media('tablet') {
+            width: 374px;
+            height: 433px;
+            margin-bottom: 0px;
+        }
+    }
+    &__img-svg {
+        width: 264px;
+        height: 305px;
+        width: 100%;
+        @include media('tablet') {
+            width: 374px;
+            height: 433px;
+        }
+    }
+    &__content {
+        width: 100%;
+        @include media('tablet') {
+            width: 420px;
+        }
+    }
+    &__title {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    &__subtitle {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,23 @@
+.button {
+    height: 48px;
+    border-radius: 50px;
+    background: $color-gray-3;
+    cursor: pointer;
+    @include border;
+    @include text(rem(16px), 700, $color-white, initial, 'Arimo');
+    padding: 0 28px;
+    @include transition(background-color border-color);
+    &:hover {
+        background-color: $color-primary;
+    };
+    &:focus {
+        background-color: $color-gray-3;
+        border-color: $color-primary;
+    };
+    &--hiring {
+        height: 60px;
+        border-radius: 100px;
+        font-family: 'Inter', sans-serif;
+        padding: 0 42px;
+    }
+}
