@@ -1,0 +1,34 @@
+.logo {
+    width: 111px;
+    height: 20px;
+    cursor: pointer;
+    @include media('tablet') {
+        width: 167px;
+        height: 30px;
+    }
+    &__image {
+        width: 111px;
+        height: 20px;
+        cursor: pointer;
+        @include media('tablet') {
+            width: 167px;
+            height: 30px;
+        }
+    }
+    &--footer {
+        width: 133px;
+        height: 24px;
+        @include media('tablet') {
+            width: 111px;
+            height: 20px;
+        }
+    }
+    &--footer__img {
+        width: 133px;
+        height: 24px;
+        @include media('tablet') {
+            width: 111px;
+            height: 20px;
+        }
+    }
+}

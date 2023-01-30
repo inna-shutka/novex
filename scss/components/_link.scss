@@ -1,0 +1,32 @@
+.link {
+    @include text(rem(14px), 500, $color-gray-3, initial, 'Arimo');
+    text-decoration: none;
+    cursor: pointer;
+    @include transition(color);
+    &:hover {
+        color: $color-primary;
+    }
+    @include media('tablet') {
+        font-weight: 700;
+        font-size: rem(16px);
+    }
+    &--footer {
+        width: 20px;
+        height: 20px;
+    }
+    &--footer__icon {
+        width: 20px;
+        height: 20px;
+        fill: $color-black;
+        &:hover {
+            fill: $color-primary;
+        }
+    }
+    &--copy {
+        @include text(rem(16px), 400, $color-black, 160%, 'Inter');
+        text-decoration: none;
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}

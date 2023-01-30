@@ -1,0 +1,19 @@
+.input {
+    height: 52px;
+    border-radius: 100px;
+    padding: 0 24px;
+    outline: none;
+    background-color: $color-gray-7;
+    @include text(rem(16px), 400, $color-gray-3, initial, 'Arimo');
+    @include border;
+    @include transition(border-color);
+    @include input-placeholder {
+        color: $color-gray-6;
+    };
+    &:hover {
+        border-color: $color-gray-3;
+    };
+    &:focus {
+        border-color: $color-primary;
+    };
+}

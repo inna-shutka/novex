@@ -1,0 +1,89 @@
+.hiring-section {
+    padding-top: 157px;
+    padding-bottom: 172px;
+    position: relative;
+    &__content {
+        @include flex(center, center, column);
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    &__subtitle {
+        text-align: center;
+        margin-bottom: 46px;
+    }
+    &__item {
+        position: absolute;
+        @include size(85px);
+    }
+    &__item-1 {
+        top: 48px;
+        left: -20px; 
+        @include media('tablet') {
+            top: 210px;
+            left: 0px;
+        }
+    }
+    &__item-2 {
+        top: 483px;
+        left: 44px; 
+        @include media('tablet') {
+            top: 460px;
+            left: 190px;
+        }
+    }
+    &__item-3 {
+        top: 83px;
+        left: 302px;
+        @include media('tablet') {
+            top: 155px;
+            left: 840px;
+        }
+    }
+    &__item-4 {
+        display: none;
+        @include media('tablet') {
+            display: inline-block;
+            right: 0px; 
+            bottom: 125px;
+        }
+    }
+    &__item-5 {
+        @include size(61px);
+        top: 0px;
+        left: 137px;
+        @include media('tablet') {
+            top: 110px;
+            left: 160px;
+        }
+    }
+    &__item-6 {
+        @include size(60px);
+        top: 517px;
+        right: 51px;
+        @include media('tablet') {
+            top: 395px;
+            right: 190px; 
+        }
+    }
+}
+
+.green {
+    position: relative;
+    &::after{
+        @include pseudo;
+        @include background-image;
+        background-image: url(assets/green-line.svg);
+        width: 110px;
+        height: 5px;
+        bottom: -8px;
+        left: 0px;
+        @include media('tablet') {
+            width: 130px;
+            height: 5px;
+            bottom: -8px;
+            left: -5px;
+        }
+    }
+}

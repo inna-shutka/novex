@@ -1,0 +1,44 @@
+.feedback-section {
+    padding-top: 126px;
+    padding-bottom: 96px;
+    @include flex(center, center, column);
+    @include media('tablet') {
+        padding-top: 20px;
+        padding-bottom: 122px;
+    }
+    &__content {
+        width: 120px;
+        margin-bottom: 28px;
+    }
+    &__img {
+        width: 120px;
+        height: 116px;
+        margin-bottom: 13px;
+    }
+    &__title {
+        text-align: center;
+    }
+    &__subtitle {
+        width: 230px;
+        text-align: center;
+        position: relative;
+        &::before,
+        &::after {
+            @include pseudo;
+            background: url(assets/quotes.svg);
+        }
+        &::before {
+            top: -18px;
+            left: -18px;
+            @include size(18px);
+        }
+        &::after {
+            right: -18px;
+            transform: rotate(180deg);
+            @include size(18px);
+        }
+        @include media('tablet') {
+            width: 830px;
+        }
+    }
+}

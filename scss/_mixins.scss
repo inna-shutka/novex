@@ -1,8 +1,31 @@
-@mixin text($font-size, $font-weight, $color, $line-height:initial) {
+$font-1: 'Saira', sans-serif;
+$font-2: 'Arimo', sans-serif;
+$font-3: 'Inter', sans-serif;
+$font-4: 'Rubik', sans-serif;
+
+$fonts: (
+    'Saira': $font-1,
+    'Arimo': $font-2,
+    'Inter': $font-3,
+    'Rubik': $font-4,
+);
+
+@mixin text(
+    $font-size,
+    $font-weight,
+    $color,
+    $line-height: false,
+    $font-family: false
+) {
     font-size: $font-size;
     font-weight: $font-weight;
     color: $color;
-    line-height: $line-height;
+    @if $line-height {
+        line-height: $line-height;
+    }
+    @if map_has_key($fonts, $font-family) {
+        font-family: map_get($fonts, $font-family);
+    }
 }
 
 @mixin flex($jc: flex-start, $ai: stretch, $direction: row, $wrap: nowrap) {
@@ -13,10 +36,89 @@
     flex-wrap: $wrap;
 }
 
-@mixin flex-col($jc, $ai, $direction, $wrap) {
-    @include flex($jc, $ai, $column, $wrap)
+@mixin size($size, $rounded: false) {
+    width: $size;
+    height: $size;
+    @if $rounded {
+        border-radius: 50%;
+    }
 }
 
-@mixin flex-center($direction:row) {
-    @include flex(center, center, $direction)
+@mixin svg($size, $color) {
+    @include size($size);
+    fill: $color;
+}
+
+@mixin input-placeholder {
+    &.placeholder {
+    @content;
+    }
+    &:-moz-placeholder {
+    @content;
+    }
+    &::-moz-placeholder {
+    @content;
+    }
+    &:-ms-input-placeholder {
+    @content;
+    }
+    &::-webkit-input-placeholder {
+    @content;
+    }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+    content: $content;
+    display: $display;
+    position: $pos;
+    @content;
+}
+
+@mixin margin-center {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+$breakpoints: (
+    'phone': 400px,
+    'phone-wide': 480px,
+    'tablet-small': 640px,
+    'tablet': 768px,
+    'tablet-medium': 860px,
+    'tablet-wide': 1024px,
+    'desktop': 1248px,
+    'desktop-wide': 1440px,
+);
+
+@mixin media($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin transition($transition-properties...) {
+    transition-property: $transition-properties;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+@mixin border($color: transparent) {
+    border: 1px solid $color;
+}
+
+@mixin background-image($position: false) {
+    background-size: cover;
+    background-repeat: no-repeat;
+    @if $position {
+        background-position: $position;
+    }
+    @content;
 }
