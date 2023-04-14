@@ -433,6 +433,7 @@ html {
 
 body, input, button, textarea, select {
   font-family: "Saira", sans-serif;
+  overflow-x: hidden;
 }
 
 body {

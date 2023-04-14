@@ -9,6 +9,7 @@ html {
 
 body, input, button, textarea, select {
     font-family: $font-1;
+    overflow-x: hidden;
 }
 
 body {
